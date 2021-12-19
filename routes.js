@@ -34,3 +34,15 @@ router.post("/add", async(req, res) => {
         // res.status(400).json({'message':err.message})
     }
 });//END
+
+router.get('/login', function(req,res)
+{
+    Login.find({}, function(err,data){
+        if(err){
+            res.status(404).json({'message':'There was an error'})
+        }
+        else{
+            res.status(200).send(data)
+        }
+    })
+});
