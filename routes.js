@@ -10,10 +10,9 @@ router.post("/add", async(req, res) => {
     const post = new Login({
         first_name:req.body.first_name,
         last_name:req.body.last_name,
-        surname:req.body.surname,
         phone:req.body.phone,
-        gender:req.body.gender,
-        residence:req.body.residence,
+        message:req.body.message,
+        email:req.body.email,
        
 
     });
