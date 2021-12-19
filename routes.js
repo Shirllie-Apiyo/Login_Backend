@@ -59,3 +59,29 @@ router.route('/login/:id').delete((req,res) =>
         }
     })
 });
+
+router.route('/login/:id').get((req,res) =>
+{
+    Login.findById(req.params.id, (error,data)=>
+    {
+        if (error){
+            if (data==null){
+                res.status(404).json({'message':"Employee not found"})
+            }
+            else{
+                res.status(400).json({'message':"There was an error"})
+            }
+        }
+        else{
+            if(data==null){
+                res.status(404).json({'message':"Employee Not Found"})
+            }
+            else{
+                res.status(200).json(data)
+            }
+            
+        }
+
+    })
+
+});
