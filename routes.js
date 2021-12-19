@@ -85,3 +85,5 @@ router.route('/login/:id').get((req,res) =>
     })
 
 });
+
+module.exports = router;
