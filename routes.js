@@ -46,3 +46,16 @@ router.get('/login', function(req,res)
         }
     })
 });
+
+router.route('/login/:id').delete((req,res) =>
+{
+    Login.findByIdAndDelete(req.params.id, (error,data)=>
+    {
+        if (error){
+            res.status(200).json({'message':"Delete Failed"})
+        }
+        else{
+            res.status(200).json({'message':"Deleted"})
+        }
+    })
+});
