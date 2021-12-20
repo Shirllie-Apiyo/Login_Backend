@@ -5,9 +5,7 @@ let mongoose =require("mongoose")
 let validator = require ("validator")
 // import {isEmail} from 'validator'
 let schema =mongoose.Schema({
-    first_name:{type:String, required:[true, "Enter your first name"],
-    validate: [validator.isAlphanumeric, 'Please enter only numbers and letters']
-    },
+    first_name:{type:String, required:[true, "Enter your first name"]},
     last_name:{type:String, required:[true, "Enter your last name"]},
     phone:{type:String, required:[true, "Enter your phone"],
         minlength:[13, "Must be 13 characters"],maxlength:[13,"maximum 13 characters"]},
