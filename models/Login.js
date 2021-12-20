@@ -9,7 +9,8 @@ let schema =mongoose.Schema({
     last_name:{type:String, required:[true, "Enter your last name"]},
     phone:{type:String, required:[true, "Enter your phone"],
         minlength:[13, "Must be 13 characters"],maxlength:[13,"maximum 13 characters"]},
-    message:{type:String, required:[true, "Enter your Message"]},
+    message:{type:String, required:[true, "Enter your Message"],
+        maxlength:[250, "maximum of 250 words"]},
     email:{type:String, required:[true, "Enter your Email "],
         validate: [validator.isEmail, 'Please enter a valid email']
     },
